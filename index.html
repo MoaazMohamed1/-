@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تشفير وفك تشفير الرسائل</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1> تشفير الرسائل</h1>
+
+        <!-- زر التبديل بين التشفير وفك التشفير -->
+        <button id="toggleButton" onclick="toggleMode()">التبديل إلى فك التشفير</button>
+
+        <!-- قسم تشفير الرسالة -->
+        <div id="encryptSection" class="section">
+            <textarea id="message" placeholder="اكتب رسالتك هنا..."></textarea>
+            <button onclick="encryptMessage()">تشفير الرسالة</button>
+            <textarea id="encryptedMessage" placeholder="الرسالة المشفرة ستظهر هنا..." readonly></textarea>
+            <button class="copy-btn" onclick="copyToClipboard('encryptedMessage')">نسخ الرسالة المشفرة</button>
+        </div>
+
+        <!-- قسم فك تشفير الرسالة (مخفي في البداية) -->
+        <div id="decryptSection" class="section" style="display: none;">
+            <textarea id="receivedMessage" placeholder="أدخل الرسالة المشفرة هنا..."></textarea>
+            <button onclick="decryptMessage()">فك تشفير الرسالة</button>
+            <textarea id="decryptedMessage" placeholder="الرسالة الأصلية ستظهر هنا..." readonly></textarea>
+            <button class="copy-btn" onclick="copyToClipboard('decryptedMessage')">نسخ الرسالة الأصلية</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
